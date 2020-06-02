@@ -33,7 +33,7 @@ def btcsearch():
             try:
                 openurl= requests.get("http://blockchain.info/q/getreceivedbyaddress/")
                 float(openurl.text)
-                time.sleep(1)
+                #time.sleep(1)
                 if(loglama==True):
                     f = open("Log_"+str(datetime.date.today())+".txt","a")
                     f.write(addr+" " +wif+ " Bakiye : "+openurl.text+"\n")
