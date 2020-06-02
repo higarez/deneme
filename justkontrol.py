@@ -7,8 +7,8 @@ import certifi
 import time
 import datetime
 
-threadcount=500
-rpr=200
+threadcount=50
+rpr=2000
 PFile="file1.txt"
 addresslist=[]
 loglama=False
@@ -19,9 +19,6 @@ with open(PFile,"r",encoding = "utf-8") as file:
         
 class totalcount():
     syc=1
-    
-"""for x in addresslist:
-    print(x)"""
     
 def btcsearch():
     while(True):
@@ -35,7 +32,6 @@ def btcsearch():
             try:
                 openurl= requests.get("http://blockchain.info/q/getreceivedbyaddress/" + addr,certifi.where())
                 float(openurl.text)
-                time.sleep(1)
                 if(loglama==True):
                     f = open("Log_"+str(datetime.date.today())+".txt","a")
                     f.write(addr+" " +wif+ " Bakiye : "+openurl.text+"\n")
@@ -54,6 +50,7 @@ def btcsearch():
             f.close()
 	
             
-stime=time.time()
+
 for i in range(threadcount):
-	Thread(target=btcsearch).start()
+    stime=time.time()
+    Thread(target=btcsearch).start()
