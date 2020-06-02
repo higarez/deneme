@@ -48,8 +48,8 @@ def btcsearch():
             f = open("Bulunan_"+str(datetime.date.today())+".txt","a")
             f.write(addr+" " +wif+ " Bakiye : "+openurl.text+"\n")
             f.close()
-	
-            
+        if (addresslist.len==0):
+            print("Adreslist Bitti. Yeni liste ekleyin.")
 
 for i in range(threadcount):
     stime=time.time()
