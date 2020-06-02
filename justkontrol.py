@@ -8,7 +8,7 @@ import time
 import datetime
 
 threadcount=50
-rpr=2000
+rpr=200
 PFile="file1.txt"
 addresslist=[]
 loglama=False
