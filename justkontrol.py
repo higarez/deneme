@@ -1,13 +1,11 @@
 import os
 import binascii
-from bitcoin import *
 import requests
 from threading import Thread
-import certifi
 import time
 import datetime
 
-threadcount=100
+threadcount=20
 rpr=200
 PFile="file1.txt"
 addresslist=[]
@@ -33,7 +31,7 @@ def btcsearch():
             break
         while (True):
             try:
-                openurl= requests.get("http://blockchain.info/q/getreceivedbyaddress/" + addr,certifi.where())
+                openurl= requests.get("http://blockchain.info/q/getreceivedbyaddress/")
                 float(openurl.text)
                 time.sleep(1)
                 if(loglama==True):
