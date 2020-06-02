@@ -15,7 +15,7 @@ loglama=False
 class totalcount():
 	syc=1
 
-def btcsearch(i):
+def btcsearch():
 	t=totalcount()
 	while(True): 
 		wif = encode_privkey(random_key(), 'wif')
@@ -42,6 +42,8 @@ def btcsearch(i):
 							f = open("Bulunan_"+str(datetime.date.today())+".txt","a")
 							f.write(addr+" " +wif+ " Bakiye : "+openurl.text+"\n")
 							f.close()
-stime=time.time()
+                            
 for i in range(threadcount):
-	Thread(target=btcsearch, args=(i+1,)).start()
+    Thread(target=btcsearch).start()
+    if(i==threadcount):
+        stime=time.time()
