@@ -7,7 +7,7 @@ import certifi
 import time
 import datetime
 
-threadcount=500
+threadcount=50
 rpr=2000
 PFile="file1.txt"
 addresslist=[]
