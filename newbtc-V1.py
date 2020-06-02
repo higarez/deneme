@@ -8,7 +8,7 @@ import time
 import datetime
 
 threadcount=50
-rpr=2000
+rpr=200
 match = "1"
 loglama=False
 
@@ -42,8 +42,7 @@ def btcsearch():
 							f = open("Bulunan_"+str(datetime.date.today())+".txt","a")
 							f.write(addr+" " +wif+ " Bakiye : "+openurl.text+"\n")
 							f.close()
-                            
+stime=time.time()                    
 for i in range(threadcount):
     Thread(target=btcsearch).start()
-    if(i==threadcount):
-        stime=time.time()
+    stime=time.time()
