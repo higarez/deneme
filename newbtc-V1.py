@@ -7,8 +7,8 @@ import certifi
 import time
 import datetime
 
-threadcount=400
-rpr=10000
+threadcount=20
+rpr=200
 match = "1"
 loglama=False
 
