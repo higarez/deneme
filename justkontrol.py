@@ -30,7 +30,7 @@ def btcsearch():
             break
         while (True):
             try:
-                openurl= requests.get("http://blockchain.info/q/getreceivedbyaddress/" + addr,certifi.where())
+                openurl= requests.get("https://blockchain.info/q/getreceivedbyaddress/" + addr)
                 float(openurl.text)
                 if(loglama==True):
                     f = open("Log_"+str(datetime.date.today())+".txt","a")
